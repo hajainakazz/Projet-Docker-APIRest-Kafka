@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  clients:
+    build: ./clients
+    container_name: clients
+    ports:
+      - "8080:8080"
+
+  commandes:
+    build: ./commandes
+    container_name: commandes
+    ports:
+      - "8081:8080"
+    depends_on:
+      - clients
